@@ -1,0 +1,19 @@
+@page "{id:int}"
+@model CrudWebApp.Pages.Personnes.DeleteModel
+@{
+    ViewData["Title"] = "Supprimer une personne";
+}
+
+<h2>Supprimer une personne</h2>
+
+<h4>Tena ho fafanao tokoa ve ity liste iray ity ?</h4>
+<div>
+    <strong>Anarana :</strong> @Model.Personne.Nom<br />
+    <strong>Fananmpiny :</strong> @Model.Personne.Prenom
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="Personne.Id" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-page="Index" class="btn btn-secondary">Annuler</a>
+</form>

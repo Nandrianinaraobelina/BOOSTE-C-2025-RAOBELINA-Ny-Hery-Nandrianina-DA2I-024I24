@@ -1,0 +1,22 @@
+@page
+@model CrudWebApp.Pages.Personnes.CreateModel
+@{
+    ViewData["Title"] = "Ajouter une personne";
+}
+
+<h2>ETO MAMPIDITRA CLIENT</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Personne.Nom" class="form-label"></label>
+        <input asp-for="Personne.Nom" class="form-control" />
+        <span asp-validation-for="Personne.Nom" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Personne.Prenom" class="form-label"></label>
+        <input asp-for="Personne.Prenom" class="form-control" />
+        <span asp-validation-for="Personne.Prenom" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
+    <a asp-page="Index" class="btn btn-secondary">Annuler</a>
+</form>

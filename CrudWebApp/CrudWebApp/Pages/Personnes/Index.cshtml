@@ -1,0 +1,51 @@
+@page
+@model CrudWebApp.Pages.Personnes.IndexModel
+@{
+    ViewData["Title"] = "Liste des personnes";
+}
+
+<h2>Liste des personnes</h2>
+<div class="alert alert-info text-center" role="alert">
+  TONGASOA !
+</div>
+@if (TempData["Notification"] != null)
+{
+    <div class="alert alert-success text-center" role="alert">
+        @TempData["Notification"]
+    </div>
+}
+@if (TempData["Erreur"] != null)
+{
+    <div class="alert alert-danger text-center" role="alert">
+        @TempData["Erreur"]
+    </div>
+}
+<p>
+    <a class="btn btn-success btn-anim" asp-page="Create">Ajouter une personne</a>
+</p>
+<div style="max-height: 250px; overflow-y: auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in Model.Personnes)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Nom</td>
+                <td>@p.Prenom</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-page="Edit" asp-route-id="@p.Id">Modifier</a>
+                    <a class="btn btn-sm btn-warning btn-anim" asp-page="Delete" asp-route-id="@p.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

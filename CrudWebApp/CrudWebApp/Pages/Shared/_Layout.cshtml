@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gestion de Personnes</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CrudWebApp.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f9f9f9; }
+        header { background: #005a8c; }
+        .navbar, .navbar-brand, .nav-link { color: #fff !important; }
+        .navbar-brand { font-weight: bold; font-size: 1.5rem; }
+        footer { background:#005a8c; color: #fff !important; padding: 1rem 0; margin-top: 2rem; }
+        .container { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; margin-top: 2rem; padding: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="big-header-title text-center">BOOSTE C-SHARP</div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="/Personnes">Gestion de Personnes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/Personnes">Personnes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/About">À propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/Contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            <span style="color:#111; font-weight:500;">&copy; 2025 - Gestion de Personnes - Application CRUD C# ASP.NET Core<br />
+            Réalisé par HERY NANDRIANINA ITY E</span>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
